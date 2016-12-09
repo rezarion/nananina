@@ -1,0 +1,11 @@
+<html>
+	<script src="jquery-1.9.1.min.js"></script>
+	<script>
+		$.post("autofill_kelurahan.php",{koordinat: '-7.084578903734799,110.343589570984037'},
+			function(data,status){
+				a= data;
+				console.log(a);
+			}
+		)
+	</script>
+</html>
