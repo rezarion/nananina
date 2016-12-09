@@ -51,7 +51,7 @@
 			</p>	
 			<p>
 				<label>Nama</label>
-				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' onkeypress="return onlyAlphabets(event, false)" maxlength="50" placeholder="masukkan nama user" required/></span>
+				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' onkeypress="return validateKeypress(event, alpha);" maxlength="50" placeholder="masukkan nama user" required/></span>
 			</p>	
 			<p>
 				<label>Username</label>

@@ -69,6 +69,20 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['id_user'])){
 					} else return false; 
 				}
 		</script>
+		<script language="Javascript" type="text/javascript">
+		  	var alpha = /[ A-Za-z]/;
+			var numeric = /[0-9]/; 
+			var alphanumeric = /[ A-Za-z0-9]/;
+
+			function validateKeypress(e, validChars) {
+				if ((key==null) || (key==0) || (key==8) ||  (key==9) || (key==13) || (key==27) ) {
+						return true;
+			    } else
+			    var keyChar = String.fromCharCode(e.which || e.keyCode);
+			    return validChars.test(keyChar) ? keyChar : false;
+			}
+        </script>
+  
 	</head>
 
 	<body>
