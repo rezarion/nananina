@@ -1,21 +1,21 @@
 <?php
 	SESSION_start();
-	include"koneksi.php";
+	include "config/koneksi.php";
 	include "library/injection.php";
 	
 		$id_user = $_SESSION['id_user'];
 		$id = $_POST['id_user'];
 		$nama = $_POST['nama'];
 		$username = $_POST['username'];
-		$pass = md5($_POST['password'];		
+		$pass = md5($_POST['password']);		
 		$level = $_POST['level'];
 		
 		$foto = $_FILES['foto']['name'];
 		$source = $_FILES['foto']['tmp_name'];
 		$target = $_FILES['foto']['name'];
-		$size = ($_FILES['foto']['size']/1024);
+		$size = ($_FILES['foto']['size']/1024); //size in KB
 		
-		if((($_FILES['foto']['type']=="image/png") || ($_FILES['foto']['type']=="image/jpeg")) && ($size < 3)){	
+		if((($_FILES['foto']['type']=="image/png") || ($_FILES['foto']['type']=="image/jpeg")) && ($size < 5000)){	
 		
 			move_uploaded_file($source,'../component/foto/'.$target);
 			
