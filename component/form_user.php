@@ -47,11 +47,11 @@
 			
 			<p>
 				<label>NIP</label>
-				<span class="field"><input type="text" name="id_user" class="input-medium" style= 'margin-left:0.1% !important' placeholder="masukkan NIP" onkeypress="return numbersonly(event, false)" maxlength="20" required/></span>
+				<span class="field"><input type="text" name="id_user" class="input-medium" style= 'margin-left:0.1% !important' placeholder="masukkan NIP" pattern="[0-9]+" maxlength="20" required/></span>
 			</p>	
 			<p>
 				<label>Nama</label>
-				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' onkeypress="return validateKeypress(event, alpha);" maxlength="50" placeholder="masukkan nama user" required/></span>
+				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' pattern="[A-Za-z]+" maxlength="50" placeholder="masukkan nama user" required/></span>
 			</p>	
 			<p>
 				<label>Username</label>

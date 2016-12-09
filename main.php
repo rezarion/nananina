@@ -70,17 +70,38 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['id_user'])){
 				}
 		</script>
 		<script language="Javascript" type="text/javascript">
-		  	var alpha = /[ A-Za-z]/;
+		  	/*var alpha = /[ A-Za-z]/;
 			var numeric = /[0-9]/; 
 			var alphanumeric = /[ A-Za-z0-9]/;
 
 			function validateKeypress(e, validChars) {
-				if ((key==null) || (key==0) || (key==8) ||  (key==9) || (key==13) || (key==27) ) {
-						return true;
-			    } else
 			    var keyChar = String.fromCharCode(e.which || e.keyCode);
 			    return validChars.test(keyChar) ? keyChar : false;
-			}
+			}*/
+			function alphaonly(evt, id)
+				{
+
+				 var value = id.value;
+
+				 var theEvent = evt || window.event;
+				 var key = theEvent.keyCode || theEvent.which;
+
+				 // Don't validate the input if below arrow, delete and backspace keys were pressed 
+				 if(key == 37 || key == 38 || key == 39 || key == 40 || key == 8 || key == 46) { // Left / Up / Right / Down Arrow, Backspace, Delete keys
+				     return;
+				 }
+
+				 key = String.fromCharCode( key );
+				 var regex = /[A-Za-z|/]/;
+
+				 if( !regex.test(key)) 
+				 {
+				  theEvent.returnValue = false;
+
+				  if(theEvent.preventDefault) 
+				   theEvent.preventDefault();
+				 }   
+				}
         </script>
   
 	</head>
