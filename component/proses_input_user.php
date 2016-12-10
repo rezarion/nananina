@@ -15,7 +15,7 @@
 		$target = $_FILES['foto']['name'];
 		$size = ($_FILES['foto']['size']/1024); //size in KB
 		
-		if((($_FILES['foto']['type']=="image/png") || ($_FILES['foto']['type']=="image/jpeg")) && ($size < 5000)){	
+		if((($_FILES['foto']['type']=="image/png") || ($_FILES['foto']['type']=="image/jpeg")) && ($size < 10000)){	
 		
 			move_uploaded_file($source,'../component/foto/'.$target);
 			

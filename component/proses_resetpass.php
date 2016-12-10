@@ -41,7 +41,7 @@
 	}else
 	{
 		echo "<script> alert('Tidak Ada Kode');
-		document.location='main.php'</script>";
+		url='main.php'</script>";
 	}
 ?>
 

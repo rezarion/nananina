@@ -33,10 +33,9 @@
 	$query =mysql_query("SELECT * FROM user");
 
 	//tampilkan
-     echo "<div class=\"maincontent\">
-            <div class=\"maincontentinner\">
-            
+     echo "<div class=\"widget\">
                 <h4 class=\"widgettitle\">Lihat Data User</h4>
+                <div class=\"widgetcontent\">
                 <table id=\"dyntable\" class=\"table table-bordered responsive\">
                     <thead>
                         <tr>
@@ -65,11 +64,12 @@
 				echo "<tr class=\" \">
 					<td></td>
 					<td style='width:5%;'><center>$i</td>
-					<td style='width:30%;'>$pecah[nama]</td>
+					<td style='width:30%;'><center>$pecah[nama]</td>
 					<td style='width:25%;'><center>$pecah[username]</td>	
 					<td style='width:20%;'><center>"; level($pecah['level']);  echo "</td>
 					<td class=\"center\" style=\"width: 60px;\"><center>
 					<a href= \"main.php?menu=reset&kode=$pecah[id_user]&&username=$pecah[username]\" title=\"Reset password\" onClick=\"return confirm('Apakah Anda yakin ingin mereset password ini?')\"><i class=\" iconsweets-refresh3\"></i></a>
+					<a href= \"main.php?menu=editUser&id_user=$pecah[id_user]\" title=\"Edit\"><i  class=\"icon-edit\"></i></a>
 					<a href=\"main.php?menu=hapusUser&kode=$pecah[id_user]\" title=\"Hapus\" onClick=\"return confirm('Apakah Anda yakin ingin menghapus data ini?')\" class=\"icon-trash\"><i></i></a>
 					</td>
 														

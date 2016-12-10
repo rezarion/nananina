@@ -138,14 +138,14 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['id_user'])){
 				<li class="right">
                     <div class="userloggedinfo">
 						
-						<!--<img style='width:60px;height:90px;!important' src="<?php
+						<img style='width:65px;height:80px;!important' src="<?php
 							include "component/koneksi.php";
 							$s = mysql_query("SELECT * FROM user WHERE id_user = '$_SESSION[id_user]' ");
 							$ss = mysql_fetch_array($s);
 						
-							//echo "component/foto/".$ss['foto'] 
+							echo "component/foto/".$ss['foto'] 
 						
-						?>" alt="" class="img-polaroid" />-->
+						?>" alt="" class="img-polaroid" />
 						
                         <div class="userinfo">
                             <h5><?php echo $_SESSION['nama_user']; ?> <small>- <?php echo $_SESSION['username']; ?></small></h5>
@@ -430,6 +430,8 @@ if (empty($_SESSION['username']) AND empty ($_SESSION['id_user'])){
 					include "component/form_user.php";
 				}else if($d == 'lihatUser'){
 					include "component/lihat_user.php";
+				}else if($d == 'editUser'){
+					include "component/form_edit_user.php";
 				}else if($d == 'reset'){
 					include "component/resetpass.php";
 				}else if($d == 'hapusUser'){

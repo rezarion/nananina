@@ -47,15 +47,15 @@
 			
 			<p>
 				<label>NIP</label>
-				<span class="field"><input type="text" name="id_user" class="input-medium" style= 'margin-left:0.1% !important' placeholder="masukkan NIP" pattern="[0-9]+" maxlength="20" required/></span>
+				<span class="field"><input type="text" name="id_user" class="input-xlarge" style= 'margin-left:0.1% !important' placeholder="masukkan NIP" pattern="[0-9]+" maxlength="20" required/></span>
 			</p>	
 			<p>
 				<label>Nama</label>
-				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' pattern="[A-Za-z]+" maxlength="50" placeholder="masukkan nama user" required/></span>
+				<span class="field"><input id="text" type="text" name="nama" class="input-xlarge" style= 'margin-left:0.1% !important' pattern="[A-Za-z\s]+" maxlength="50" placeholder="masukkan nama user" required/></span>
 			</p>	
 			<p>
 				<label>Username</label>
-				<span class="field"><input type="text" name="username" class="input-medium" style= 'margin-left:0.1% !important' placeholder="masukkan username" maxlength="20" required/></span>
+				<span class="field"><input type="text" name="username" class="input-xlarge" style= 'margin-left:0.1% !important' pattern="[a-zA-Z0-9]+" placeholder="masukkan username" maxlength="20" required/></span>
 			</p>	
 			<p>
 				<label>Password</label>
@@ -85,7 +85,7 @@
 			</div> 
 			<p>
 				<label> </label>
-				<span class="field" ><img id="preview" src="" alt="" width="60px" height="240px" /></span>
+				<span class="field" ><img id="preview" src="" alt="" width="15%" height="25%" /></span>
 			</p>
 			<p class="stdformbutton">
                 <button type="submit" class="btn btn-primary" name="input" style='margin-left:-9% !important'><a href="" style="text-decoration=:none; color:white;"></span>Submit</a></button>

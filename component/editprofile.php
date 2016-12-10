@@ -12,6 +12,38 @@
 	$query =mysql_query("select * from user where id_user='$id_user'");
 	$ss = mysql_fetch_array($query);*/
 ?>	
+<script>
+    /*MELIHAT PREVIEW UPLOAD FOTO*/
+    function tampilkanPreview(gambar,idpreview){
+        //membuat objek gambar
+        var gb = gambar.files;
+               
+        //loop untuk merender gambar
+        for (var i = 0; i < gb.length; i++){
+            //bikin variabel
+            var gbPreview = gb[i];
+            var imageType = /image.*/; //untuk semua gambar /image.*/
+            var preview=document.getElementById(idpreview);            
+            var reader = new FileReader();
+                    
+            if (gbPreview.type.match(imageType)) {
+                //jika tipe data sesuai
+                preview.file = gbPreview;
+                reader.onload = (function(element) { 
+                    return function(e) { 
+                        element.src = e.target.result; 
+                    }; 
+                })(preview);
+                //membaca data URL gambar
+                reader.readAsDataURL(gbPreview);
+            }else{
+                //jika tipe data tidak sesuai
+                alert("Type file tidak sesuai. Harus file image");
+                }           
+        }    
+    }
+</script>
+
        
         <div class="maincontent">
             <div class="maincontentinner">
@@ -56,31 +88,35 @@
                                         </p>
 										<p>
                                             <label>Nama:</label>
-                                            <input type="text" name="nama" value="<?php echo $ss['nama']; ?>" class="input-xlarge" style= 'width:30%; height:5%; margin-left:0% !important'/>
+                                            <input type="text" name="nama" value="<?php echo $ss['nama']; ?>" class="input-xlarge" style= 'width:30%; height:5%; margin-left:0% !important' pattern="[A-Za-z\s]+" maxlength="50" placeholder="masukkan nama user" required/>
                                         </p>
 										<p>
                                             <label>Username:</label>
-                                            <input type="text" name="username" value="<?php echo $ss['username']; ?>" class="input-xlarge" style= 'width:20%; margin-left:0%;height:5%; !important'/>
+                                            <input type="text" name="username" value="<?php echo $ss['username']; ?>" class="input-xlarge" style= 'width:20%; margin-left:0%;height:5%; !important' pattern="[a-zA-Z0-9]+" placeholder="masukkan username" maxlength="20" required/>
                                         </p>
 										<p>
                                             <label> Password</label>
-                                            <input type="password" name="password" class="input-xlarge" style= 'width:30%; margin-left:0%;height:5%; !important' value="<?php echo $ss['password']; ?>" />
+                                            <input type="password" name="password" class="input-xlarge" style= 'width:30%; margin-left:0%;height:5%; !important' value="<?php echo $ss['password']; ?>" placeholder="masukkan password" required/>
                                         </p>
 										<div class="par">
-											<label>Ubah Foto</label>
-											<div class="fileupload fileupload-new" data-provides="fileupload">
-											<div class="input-append">
-											<div class="uneditable-input span3">
-												<i class="iconfa-file fileupload-exists"></i>
-												<span class="fileupload-preview"></span>
-											</div>
-											<span class="btn btn-file"><span class="fileupload-new">Select file</span>
-											<span class="fileupload-exists">Change</span>
-											<input type="file" name="foto" /></span>
-											<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
-											</div>
-											</div>
-										</div>
+                                            <label>Foto</label>
+                                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                            <div class="uneditable-input span2">
+                                                <i class="iconfa-file fileupload-exists"></i>
+                                                <span class="fileupload-preview"></span>
+                                            </div>
+                                            <span class="btn btn-file"><span class="fileupload-new">Select file</span>
+                                            <span class="fileupload-exists">Change</span>
+                                            <input type="file" name="foto" accept="image/*" onchange="tampilkanPreview(this,'preview')"/></span>
+                                            <a href="#" class="btn fileupload-exists" data-dismiss="fileupload" onclick="document.getElementById('preview').src=''">Remove</a>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <label> </label>
+                                            <span class="field" ><img id="preview" src="" alt="" width="15%" height="25%" /></span>
+                                        </p>
                                     </div>
                                 </div>
                                

@@ -43,20 +43,20 @@
 							VALUES ('','$_SESSION[id_user]','Edit data user')";
 			$status2 = mysql_query($status);
 			
-			echo mysql_error();
+			//echo mysql_error();
 			$_SESSION['success'] = "Data berhasil diubah";
 			echo"<meta http-equiv='refresh' content='0;url=../main.php?menu=lihatUser'/>";
 		
 		}else{
-			echo mysql_error();
+			//echo mysql_error();
 			$_SESSION['error'] = "Proses gagal, terjadi kesalahan : ".mysql_error();
-			echo"<meta http-equiv='refresh' content='0;url=../main.php?menu=editProfile'/>";
+			echo"<meta http-equiv='refresh' content='0;url=../main.php?menu=editUser'/>";
 		}
 	
 	}else {
 			echo mysql_error();
 			$_SESSION['error'] = "Proses dibatalkan";
-			echo"<meta http-equiv='refresh' content='0;url=../main.php?menu=editProfile'/>";
+			echo"<meta http-equiv='refresh' content='0;url=../main.php?menu=editUser'/>";
 		};
 					
 ?>
